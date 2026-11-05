@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Amit's personal portfolio - Web Developer">
   <title>Amit | Web Developer Portfolio</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- ===== Animated background ===== -->
   <div class="background">
     <div class="orb orb-one"></div>
     <div class="orb orb-two"></div>
@@ -18,10 +26,14 @@
     <div class="stars" aria-hidden="true"></div>
   </div>
 
+
+  <!-- ===== Header / Navigation ===== -->
   <header class="site-header">
     <nav class="nav container">
       <a class="brand" href="#home">Amit's<span> Portfolio</span></a>
+
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
       <ul class="nav-links">
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -32,24 +44,32 @@
     </nav>
   </header>
 
+
   <main>
+
+    <!-- ===== Home / Hero ===== -->
     <section id="home" class="hero container">
+
       <div class="hero-copy reveal">
         <div class="eyebrow"><span></span> Available to learn & build</div>
+
         <h1>Hi, I'm <strong>Amit</strong></h1>
         <h2>I am a <span id="typed"></span></h2>
+
         <p>
           Welcome to my personal portfolio. I am interested in programming,
           web development and technology, and I am continuously learning
           HTML, CSS and Java Script.
         </p>
+
         <div class="hero-actions">
           <a class="btn primary" href="#projects">View My Projects <span>↗</span></a>
           <a class="btn ghost" href="#contact">Contact Me</a>
         </div>
+
         <div class="mini-stats">
           <div><b>3</b><span>Core Skills</span></div>
-          <div><b>2</b><span>Projects</span></div>
+          <div><b>4</b><span>Projects</span></div>
           <div><b>∞</b><span>Learning</span></div>
         </div>
       </div>
@@ -57,19 +77,30 @@
       <div class="hero-visual reveal">
         <div class="photo-card">
           <div class="photo-glow"></div>
-          <img src="bg.jpeg" alt="Amit's profile" onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
+
+          <img src="bg.jpeg" alt="Amit's profile"
+               onerror="this.style.display='none'; this.parentElement.classList.add('no-image')">
           <div class="fallback-avatar">A</div>
+
           <div class="floating-card card-top">HTML · CSS · Java Script</div>
           <div class="floating-card card-bottom">Web Developer</div>
         </div>
       </div>
+
     </section>
 
+
+    <!-- ===== About ===== -->
     <section id="about" class="section container reveal">
+
       <div class="section-heading">
         <span>01</span>
-        <div><p>Get to know me</p><h2>About <em>Me</em></h2></div>
+        <div>
+          <p>Get to know me</p>
+          <h2>About <em>Me</em></h2>
+        </div>
       </div>
+
       <div class="about-card glass">
         <div class="about-icon">A</div>
         <div>
@@ -81,64 +112,156 @@
           </p>
         </div>
       </div>
+
     </section>
 
+
+    <!-- ===== Skills ===== -->
     <section id="skills" class="section container reveal">
+
       <div class="section-heading">
         <span>02</span>
-        <div><p>What I work with</p><h2>My <em>Skills</em></h2></div>
+        <div>
+          <p>What I work with</p>
+          <h2>My <em>Skills</em></h2>
+        </div>
       </div>
+
       <div class="skills-grid">
-        <article class="skill-card glass"><div class="skill-number">01</div><h3>HTML</h3><p>Building structured and semantic web pages.</p><div class="meter"><span style="width:90%"></span></div></article>
-        <article class="skill-card glass"><div class="skill-number">02</div><h3>CSS</h3><p>Creating responsive layouts and modern interfaces.</p><div class="meter"><span style="width:82%"></span></div></article>
-        <article class="skill-card glass"><div class="skill-number">03</div><h3>Java Script</h3><p>Learning programming concepts and building projects.</p><div class="meter"><span style="width:70%"></span></div></article>
+
+        <article class="skill-card glass">
+          <div class="skill-number">01</div>
+          <h3>HTML</h3>
+          <p>Building structured and semantic web pages.</p>
+          <div class="meter"><span style="width: 90%"></span></div>
+        </article>
+
+        <article class="skill-card glass">
+          <div class="skill-number">02</div>
+          <h3>CSS</h3>
+          <p>Creating responsive layouts and modern interfaces.</p>
+          <div class="meter"><span style="width: 82%"></span></div>
+        </article>
+
+        <article class="skill-card glass">
+          <div class="skill-number">03</div>
+          <h3>Java Script</h3>
+          <p>Learning programming concepts and building projects.</p>
+          <div class="meter"><span style="width: 70%"></span></div>
+        </article>
+
       </div>
+
     </section>
 
+
+    <!-- ===== Projects ===== -->
     <section id="projects" class="section container reveal">
+
       <div class="section-heading">
         <span>03</span>
-        <div><p>Things I've built</p><h2>My <em>Projects</em></h2></div>
+        <div>
+          <p>Things I've built</p>
+          <h2>My <em>Projects</em></h2>
+        </div>
       </div>
+
       <div class="projects-grid">
+
+        <!-- Project 1: Slider -->
         <article class="project-card glass">
-          <div class="project-top"><span class="project-tag">HTML + CSS</span><span class="project-index">01</span></div>
-          <h3>Simple Website</h3>
-          <p>A simple website created using HTML and CSS while practicing web development fundamentals.</p>
-          <a href="#" class="project-link">View Project <span>→</span></a>
+          <div class="project-top">
+            <span class="project-tag">HTML + CSS + JS</span>
+            <span class="project-index">01</span>
+          </div>
+          <h3>Image Slider</h3>
+          <p>An image slider built with HTML, CSS and Java Script with smooth slide transitions and controls.</p>
+          <a href="https://slider-sooty-tau.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">
+            View Project <span>→</span>
+          </a>
         </article>
+
+        <!-- Project 2: Calculator -->
         <article class="project-card glass">
-          <div class="project-top"><span class="project-tag">Java Script</span><span class="project-index">02</span></div>
-          <h3>Java Script Project</h3>
-          <p>A Java Script project created while learning programming and strengthening problem-solving skills.</p>
-          <a href="https://lucent-macaron-2e7034.netlify.app/" class="project-link">View Project <span>→</span></a>
+          <div class="project-top">
+            <span class="project-tag">HTML + CSS + JS</span>
+            <span class="project-index">02</span>
+          </div>
+          <h3>Calculator</h3>
+          <p>A working calculator that handles basic arithmetic operations, built to practice Java Script logic.</p>
+          <a href="https://amitcalculator.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+            View Project <span>→</span>
+          </a>
         </article>
+
+        <!-- Project 3: Todo List -->
+        <article class="project-card glass">
+          <div class="project-top">
+            <span class="project-tag">HTML + CSS + JS</span>
+            <span class="project-index">03</span>
+          </div>
+          <h3>Todo List</h3>
+          <p>A simple todo list app to add, complete and delete tasks, made while learning DOM manipulation.</p>
+          <a href="https://amit-todo-kappa.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
+            View Project <span>→</span>
+          </a>
+        </article>
+
+        <!-- Project 4: Amazon Clone (add the live link in href later) -->
+        <article class="project-card glass">
+          <div class="project-top">
+            <span class="project-tag">HTML + CSS + JS</span>
+            <span class="project-index">04</span>
+          </div>
+          <h3>Amazon Homepage Clone</h3>
+          <p>A clone of the Amazon homepage made to practice layouts, styling and building real-world pages.</p>
+          <a href="#" class="project-link">
+            View Project <span>→</span>
+          </a>
+        </article>
+
       </div>
+
     </section>
 
+
+    <!-- ===== Contact ===== -->
     <section id="contact" class="section container reveal">
       <div class="contact-card">
+
         <div>
           <span class="contact-label">04 · Let's connect</span>
           <h2>Have a project or idea?</h2>
           <p>I'm always interested in learning, building and connecting with people in technology.</p>
         </div>
+
         <div class="contact-details">
           <a href="mailto:amit.choudhary.cv@gmail.com">amit.choudhary.cv@gmail.com</a>
           <a href="https://www.linkedin.com/in/amit-choudhary-576812270" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
+
       </div>
     </section>
+
   </main>
 
+
+  <!-- ===== Footer ===== -->
   <footer>
     <div class="container footer-inner">
-      <div><strong>Amit<span>.</span></strong><small>All about my portfolio</small></div>
+      <div>
+        <strong>Amit<span>.</span></strong>
+        <small>All about my portfolio</small>
+      </div>
       <p>© 2026 Amit. All rights reserved.</p>
     </div>
   </footer>
 
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
   <script src="script.js"></script>
+
 </body>
+
 </html>

@@ -1,3 +1,9 @@
+/* ==========================================================
+   Amit's Portfolio - script.js
+   ========================================================== */
+
+
+/* ---------- 1. Typing effect in the hero section ---------- */
 const typed = new Typed("#typed", {
   strings: ["Web Developer", "Programmer", "Learner"],
   typeSpeed: 65,
@@ -6,33 +12,57 @@ const typed = new Typed("#typed", {
   loop: true
 });
 
-const menu = document.querySelector(".menu-toggle");
-const links = document.querySelector(".nav-links");
 
-menu.addEventListener("click", () => {
-  const open = links.classList.toggle("open");
-  menu.setAttribute("aria-expanded", open);
+/* ---------- 2. Mobile menu toggle ---------- */
+const menuButton = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", isOpen);
 });
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => links.classList.remove("open"));
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("visible");
+// Close the menu after a link is clicked
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
   });
-}, {threshold: 0.12});
+});
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
+/* ---------- 3. Reveal sections when they scroll into view ---------- */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll(".reveal").forEach((element) => {
+  revealObserver.observe(element);
+});
+
+
+/* ---------- 4. Highlight the active nav link while scrolling ---------- */
 const sections = document.querySelectorAll("main section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll", () => {
-  let current = "home";
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 180) current = section.id;
+  let currentSection = "home";
+
+  sections.forEach((section) => {
+    // 180px offset so the link changes a little before the section reaches the top
+    if (window.scrollY >= section.offsetTop - 180) {
+      currentSection = section.id;
+    }
   });
-  navItems.forEach(item => item.classList.toggle("active", item.getAttribute("href") === "#" + current));
+
+  navItems.forEach((item) => {
+    const isActive = item.getAttribute("href") === "#" + currentSection;
+    item.classList.toggle("active", isActive);
+  });
 });
